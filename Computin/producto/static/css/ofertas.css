@@ -1,0 +1,45 @@
+
+
+section
+{
+    text-align: center;
+}
+
+.Titulofertas
+{
+    background-color: cadetblue;
+    margin-top: 10px;
+}
+#separador_header{
+    height:110px ;
+}
+
+
+ img.middle 
+{
+    vertical-align: middle;
+}
+
+.col-md
+{
+    margin-top: 10px;
+}
+.card-title
+{
+    color: black;
+    height: 60px;
+    font-size: 60%;
+}
+
+.card-text
+{
+    color: black;
+    height: 20px;
+    font-size: 70%;
+}
+.imagendecard
+{
+    width: 100px;
+    height: 100px;
+}
+
