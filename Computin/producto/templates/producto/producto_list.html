@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1 style="background-color: aquamarine;">LISTADO DE PRODUCTOS </h1>
+
+    {% if producto_list %}
+  
+
+      
+      <div class="conteiner">
+        <div class="row">
+          {% for producto in producto_list %}
+          <div class="col-md">        
+            <div class="card text-center">
+              <div class="card-body">
+                <p class="card-title">{{ producto.NombreProd }}</p>
+                <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
+                <p class="card-text">${{ producto.PrecioProd }}</p>
+                <a href="{{ producto.get_absolute_url }}" class="btn btn-primary">VER</a>
+              </div>
+            </div>          
+          </div>{% endfor %}
+        </div> 
+      </div>
+     
+
+   
+
+    {% else %}
+      <p>No hay productos que mostrar.</p>
+    {% endif %}       
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends "base_generic.html" %}
+
+{%block content %}
+   
+            <!-- FORMULARIO DE COMPRA -->
+            <div class="container formu">
+                <div class="comprar">                
+                    <form class="card" name="formucomprar" method="GET">
+                        <div class="container-sm">
+                            <div class="form-group col-md">
+                                <label >Nombre y apellido</label>
+                                <input type="text" class="form-control" id="nombre" name="Nombre">
+                            </div>
+                            <div class="form- col-md">
+                                <label >Correo</label>
+                                <input type="email" class="form-control" id="correo" name="Correo" >
+                            </div>
+                            <div class="form-group col-md">
+                                <label >Número de teléfono</label>
+                                <input type="number" class="form-control" id="numero_tel" name="Numero_tel" >
+                            </div>
+                            <div class="form-group col-md">
+                                <label >Comuna</label>
+                                <input type="text" class="form-control" id="comuna" name="Comuna">
+                            </div>
+                            <div class="form-group col-md">
+                                <label >Dirección</label>
+                                <input type="text" class="form-control" id="direc" name="Direc">
+                            </div>
+                            <div class="form-group col-md">
+                                <label >ID Producto</label>
+                                <input type="text" class="form-control" id="prod" name="Prod">
+                            </div>
+                            <div class="form- col-md">
+                                <label >Comentario</label>
+                                <textarea class="form-control" name="Comentario" id="comentario" cols="5"></textarea>
+                            </div>                        
+                            <div class="form-group col-md">
+                                <input class="btn btn-primary" type="button" id="btn_enviar" value="Enviar" onclick="ValidarCompra()">
+                            </div>
+                            <div class="container" style="background-color: lightgray; ">
+                                <h3 style="color: black;">Para ventas telefónicas llamar al: +56991349101</h3>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+                
+            </div>
+    
+            <!--script para validar formulario-->
+            <script>
+                function ValidarCompra(){                
+                    nom = document.getElementById("nombre").value;
+                    comprobaremail =  /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}.){1,125}[A-Z]{2,63}$/i;
+                    email = document.getElementById("correo").value;
+                    tel = document.getElementById("numero_tel").value;
+                    comu = document.getElementById("comuna").value;
+                    direccion = document.getElementById("direc").value;
+                    idprod = document.getElementById("prod").value;
+                    coment = document.getElementById("comentario").value;              
+                    if(nom==null || nom=="" || nom.length<8){
+                        alert('¡Debe ingresar un nombre válido!');
+                        document.formucomprar.Nombre.focus();
+                        document.getElementById('nombre').value="";
+                    }
+                    else if(!comprobaremail.test(email) || email==null  || email=="" || email.length<8){
+                        alert('¡Debe ingresar un correo válido!');
+                        document.formucomprar.Correo.focus();
+                        document.getElementById('correo').value="";
+                    }
+                    else if(tel==null || tel=="" || (tel.length<9 && tel.length>12)){
+                        alert('¡Debe ingresar un número telefónico!');
+                        document.formucomprar.Numero_tel.focus();
+                        document.getElementById('numero_tel').value="";
+                    }
+                    else if(comu==null || comu=="" || comu.length<5){
+                        alert('¡Debe ingresar una comuna!');
+                        document.formucomprar.Comuna.focus();
+                        document.getElementById('comuna').value="";
+                    }
+                    else if(direccion==null || direccion=="" || direccion.length<5){
+                        alert('¡Debe ingresar una dirección!');
+                        document.formucomprar.Direc.focus();
+                        document.getElementById('direc').value="";
+                    }
+                    else if(idprod==null || idprod=="" || idprod<10000){
+                        alert('¡Debe ingresar al menos una id de producto!');
+                        document.formucomprar.Prod.focus();
+                        document.getElementById('prod').value="";
+                    }
+                    else{
+                        alert('¡Solicitud enviada! En minutos será contactado vía telefónica y/o correo electrónico');
+                        document.getElementById('nombre').value="";
+                        document.getElementById('correo').value="";
+                        document.getElementById('numero_tel').value="";
+                        document.getElementById('comuna').value="";
+                        document.getElementById('direc').value="";
+                        document.getElementById('prod').value="";
+                        document.getElementById('comentario').value="";
+                    }             
+                    
+    
+                }
+    
+                
+            </script>
+{% endblock %}

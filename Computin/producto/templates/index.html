@@ -3,59 +3,6 @@
 {%block content %}
 <section>
     <!--Carrusel-->
-    <div id="separador_header">             
-    </div>
-    <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Iniciar sesión</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                </div>
-                <div class="modal-body">
-                    <form id="form-ini-secion" method="POST">
-                        <div class="form-group">
-                            <label for="secione">Correo :</label>
-                            <input name="secione" id="secione" type="text" class="form-control" placeholder="abcd123@gmail.com">
-                            <p class="" id="error-email"></p>
-                        </div>
-                        <div class="form-group">
-                            <label for="secionc">Clave :</label>
-                            <input name="secionc" id = "secionc" type="password" class="form-control" placeholder="Clave">
-                            <p class="" id="error-clave"></p>
-                        </div>
-                        <div class="form-group">
-                           <button class="btn btn-primary" id="btnlog">Ingresar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Regístrate en Computin</h4>
-                </div>
-                <div class="modal-body">
-                    <form id="form-ini-secion" method="POST">
-                        <div class="form-group">
-                            <label for="regiscorreo">Correo :</label>
-                            <input name="regiscorreo" id="regiscorreo" type="text" class="form-control" placeholder="abcd123@gmail.com">
-                            <p class="" id="error-regiscorreo"></p>
-                        </div>
-                        <div class="form-group">
-                            <label for="regisclave">Clave :</label>
-                            <input name="regisclave"id = "regisclave" type="password" class="form-control" placeholder="Clave">
-                            <p class="" id="error-regisclave"></p>
-                        </div>
-                        <div class="form-group">
-                           <button class="btn btn-primary" id="btnregistrar">Registrar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="container">
         <div id="carousel1" class="carousel slide" data-ride="carousel">
@@ -92,59 +39,60 @@
             </a>
         </div>   
     </div>
-        <div class="container">
+    <div class="container">
     
-            <button class="tablink" onclick="openPage('DESTACADO', this, 'black')"id="defaultOpen" >DESTACADO</button>
-            <button class="tablink" onclick="openPage('OFERTAS', this, 'black')" >OFERTAS</button>
-            <button class="tablink" onclick="openPage('POPULARES', this, 'black')">POPULARES</button>
-            
-            <div id="DESTACADO" class="tabcontent">
-                <div class="row">
-                    {% for producto in DestacadoProd %}
-                    <div class="col-md">        
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <p class="card-title">{{ producto.NombreProd }}</p>
-                                <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto" >
-                                <p class="card-text">${{ producto.PrecioProd }}</p>
-                                <a href="" class="btn btn-primary">VER</a>
-                            </div>
-                        </div>          
-                    </div>{% endfor %}
-                </div>
-            </div>
-    
-            <div id="OFERTAS" class="tabcontent">
-                <div  class="row">
-                    {% for producto in OfertaProd  %}
-                    <div class="col-md">        
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <p class="card-title">{{ producto.NombreProd }}</p>
-                                <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto" >
-                                <p class="card-text">${{ producto.PrecioProd }}</p>
-                                <a href="" class="btn btn-primary">VER</a>
-                            </div>
-                        </div>          
-                    </div>{% endfor %}
-                </div>
-            </div>
-            <div id="POPULARES" class="tabcontent">
-                <div class="row">
-                    {% for producto in PopularProd   %}
-                    <div class="col-md">        
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <p class="card-title">{{ producto.NombreProd }}</p>
-                                <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
-                                <p class="card-text">${{ producto.PrecioProd }}</p>
-                                <a href="" class="btn btn-primary">VER</a>
-                            </div>
-                        </div>          
-                    </div>{% endfor %}
-                </div>
+        <button class="tablink" onclick="openPage('DESTACADO', this, 'black')"id="defaultOpen" >DESTACADO</button>
+        <button class="tablink" onclick="openPage('OFERTAS', this, 'black')" >OFERTAS</button>
+        <button class="tablink" onclick="openPage('POPULARES', this, 'black')">POPULARES</button>
+        
+        <div id="DESTACADO" class="tabcontent">
+            <div class="row">
+                {% for producto in DestacadoProd %}
+                <div class="col-md">        
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <p class="card-title">{{ producto.NombreProd }}</p>
+                            <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto" >
+                            <p class="card-text">${{ producto.PrecioProd }}</p>
+                            <a href="{{ producto.get_absolute_url }}" class="btn btn-primary">VER</a>
+                        </div>
+                    </div>          
+                </div>{% endfor %}
             </div>
         </div>
+
+        <div id="OFERTAS" class="tabcontent">
+            <div  class="row">
+                {% for producto in OfertaProd  %}
+                <div class="col-md">        
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <p class="card-title">{{ producto.NombreProd }}</p>
+                            <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto" >
+                            <p class="card-text">${{ producto.PrecioProd }}</p>
+                            <a href="{{ producto.get_absolute_url }}" class="btn btn-primary">VER</a>
+                        </div>
+                    </div>          
+                </div>{% endfor %}
+            </div>
+        </div>
+        <div id="POPULARES" class="tabcontent">
+            <div class="row">
+                {% for producto in PopularProd   %}
+                <div class="col-md">        
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <p class="card-title">{{ producto.NombreProd }}</p>
+                            <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
+                            <p class="card-text">${{ producto.PrecioProd }}</p>
+                            <a href="{{ producto.get_absolute_url }}" class="btn btn-primary">VER</a>
+                        </div>
+                    </div>          
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>    
 </section>
     
     

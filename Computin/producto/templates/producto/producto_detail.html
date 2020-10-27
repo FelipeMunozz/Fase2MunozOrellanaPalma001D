@@ -1,0 +1,69 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="row producto" style="width: 90%;">
+    <div class="col-sm" style="background-color: ghostwhite; margin-left: 2%; margin-right: 2%; border-radius: 40px;">
+        <div class="container-fluid p-1 my-1 text-black" style="background-color: transparent; border-radius: 20px; text-align:left;">
+            <h5>Incio>Productos>Audifonos>Gamer>{{ producto.NombreProd }} </h5>
+        </div>
+        
+        <div >
+            <div class="col-sm-4 cuadro_imagen_prod" style="float: left;">
+                <img class="img imagen_prod" src="{{ producto.imageProd.url}}"  alt="productos">                    
+            </div>
+            <div class="col-sm-7 jumbotron cuadro_venta " style="float: right; text-align:center;">
+                <h1>{{ producto.NombreProd }}</h1>
+                <p>ID: {{ producto.idProd }}</p>
+                <hr>
+                <br>
+                <h2>$ {{ producto.PrecioProd }}</h2>
+                <br>                
+                {% if producto.StockProd == 0 %}
+                <p style="color:red">Stock disponible: {{producto.StockProd}}</p>
+                <p style="color:red">Despacho a domicilio: No</p>   
+                <br>    
+                <a class="btn btn-danger" disabled="true">COMPRAR</a>         
+                {% endif %}                
+
+                {% if producto.StockProd < 3 and producto.StockProd > 0 %}
+                <p style="color:steelblue">Stock disponible: {{producto.StockProd}}</p>
+                <p style="color:steelblue">Despacho a domicilio: Si</p>                
+                <a href="" class="btn btn-success">COMPRAR</a>
+                <hr>
+                <p>Stock bajo, Comuniquese con la tienda antes de hacer el pago de este producto</p>
+                {% endif %}
+
+                {% if producto.StockProd > 3 %}
+                <p style="color:green">Stock disponible: {{producto.StockProd}}</p>
+                <p style="color:green">Despacho a domicilio: Si</p>                
+                <a href="" class="btn btn-success">COMPRAR</a>
+                {% endif %}
+                
+            </div>
+        </div>
+        <div class="container">
+            <div>
+                <p class="desc_prod" >             
+                    {{ producto.DescripciónProd }}
+                    <br>
+                </p>
+            </div> 
+        </div>
+
+        <div class="row">
+            {% for producto in DestacadoProd %}
+            <div class="col-md">        
+                <div class="card text-center">
+                    <div class="card-body">
+                        <p class="card-title">{{ producto.NombreProd }}</p>
+                        <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto" >
+                        <p class="card-text">${{ producto.PrecioProd }}</p>
+                        <a href="{% url 'producto-detail' producto.pk %}" class="btn btn-primary">VER</a>
+                    </div>
+                </div>          
+            </div>{% endfor %}
+        </div>              
+    </div>
+</div>  
+
+{% endblock %}

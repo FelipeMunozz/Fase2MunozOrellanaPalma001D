@@ -418,7 +418,6 @@ p.from-control
 }
 
 
-
 /* estilos de productos*/
 .imagen_prod{
     width: 100%;
@@ -432,39 +431,6 @@ p.from-control
     text-align: justify;
 }
 
-@media (min-width:1800px) and (max-width:2400px)
-{
-    .imagen_prod
-    {
-        margin-left: 30%;
-    } 
-    .cuadro_venta{
-        height: 550px;
-        left: -10px;
-    }
-    .cuadro_venta h1{
-        margin: 5%;
-    }
-    
-}
-
-/* media para jumbrotron*/
-@media (min-width:580px) and (max-width:1800px)
-{
-    .cuadro_imagen_prod{
-        width: 100%;
-        margin-left: 35%;
-        margin-right: 10%;
-        margin-bottom: 5%;
-    }       
-    .jumbotron{  
-        margin-right: 20%;
-        float: none;
-    }
-    
-    
-    
-}
 
 
 @media (min-width:800px) and (max-width:1000px)
