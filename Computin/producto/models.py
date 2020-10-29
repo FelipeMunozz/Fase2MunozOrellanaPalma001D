@@ -19,3 +19,19 @@ class Producto(models.Model):
 		
 	def get_absolute_url(self):
 		return reverse('producto-detail', args=[int(self.idProd)])
+
+class Compra(models.Model):
+	idCompra = models.UUIDField(primary_key=True, default=uuid.uuid4,help_text='Id única de la compra')
+	nombre = models.CharField(max_length=150)
+	correo= models.CharField(max_length=150)
+	numTelefonico = models.IntegerField(null=True)
+	comuna = models.CharField(max_length=150)
+	direccion = models.CharField(max_length=150)
+	idProducto = models.CharField(max_length=150)
+	comentario = models.CharField(max_length=150)
+
+	def __str__(self):
+		return self.nombre
+	
+	def get_absolute_url(self):
+		return reverse('producto-detail', args=[int(self.idProducto)])

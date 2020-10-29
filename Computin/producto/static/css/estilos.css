@@ -425,7 +425,7 @@ p.from-control
 }
 
 .desc_prod{
-    margin-top: 35%;
+    margin-top: 15%;
     margin-left: 15%;
     margin-right: 15%;
     text-align: justify;
@@ -439,10 +439,7 @@ p.from-control
     {
         left:-6px;
         width: 110%;
-    } 
-    .desc_prod{
-        margin-top: 90%;
-    }
+    }     
 
     
 }
@@ -454,9 +451,7 @@ p.from-control
         left: -6px;
         width: 107%;
     } 
-    .desc_prod{
-        margin-top: 70%;
-    }
+
     .secion
     {
        left: 84%;
@@ -465,12 +460,7 @@ p.from-control
     
 }
 
-@media (min-width:1200px) and (max-width:1700px)
-{
-    .desc_prod{
-        margin-top: 95%;
-    }
-}
+
 
 @media (min-width:1200px) and (max-width:1920px)
 {
@@ -478,11 +468,8 @@ p.from-control
     {
         left: -6px;
         width: 105%;
-    }    
-    .desc_prod
-    {
-        margin-top: 55%;
-    }
+    }   
+    
     
     .secion
     {

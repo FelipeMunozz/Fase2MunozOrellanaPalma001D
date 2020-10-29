@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from . models import Producto
+from . models import Compra
 from django.views import generic
 
 # Create your views here.
@@ -32,34 +34,34 @@ def ofertas(request):
         'OfertaProd' : OfertaProd, 'PopularProd' : PopularProd},
     )
 
-def comprar(request):
-    
+def comprar(request,id):
+    idprod = id
     return render(
         request,
-        'comprar.html',
+        'comprar.html',{'idprod':idprod,},
     )
 
-def productos(request):
-    
-    return render(
-        request,
-        'productos.html',
-    )
 
-def base_generic(request):
-    DestacadoProd = Producto.objects.all().filter(CategoriaEsp__icontains = 'Destacados')
-    return render(
-        request,
-            'producto/producto_detail.html',
-            context={'DestacadoProd' : DestacadoProd}
-        )
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from django.views import generic
 
 class ProductoDetailView(generic.DetailView):
     model = Producto
 
 class ProductosListView(generic.ListView):
     model = Producto
+
+class ProductoCreate(CreateView):
+    model = Producto
+
+class ProcutoUpdate(UpdateView):
+    model = Producto
+    fields = 'StockProd'
+
+class CompraCreate(CreateView):
+    model = Compra
+    fields = '__all__'
+
+class CompraDetailView(generic.DetailView):
+    model = Compra

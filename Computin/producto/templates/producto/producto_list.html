@@ -1,7 +1,9 @@
 {% extends "base_generic.html" %}
 
+{% block title%}<title>ComPutin - Productos</title>{% endblock %}
+
 {% block content %}
-    <h1 style="background-color: aquamarine;">LISTADO DE PRODUCTOS </h1>
+    <h1 style="background-color: aquamarine;">LISTADO DE PRODUCTOS</h1>
 
     {% if producto_list %}
   
@@ -27,6 +29,6 @@
    
 
     {% else %}
-      <p>No hay productos que mostrar.</p>
+      <p>There are no books in the library.</p>
     {% endif %}       
 {% endblock %}
