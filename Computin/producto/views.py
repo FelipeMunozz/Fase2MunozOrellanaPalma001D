@@ -34,11 +34,10 @@ def ofertas(request):
         'OfertaProd' : OfertaProd, 'PopularProd' : PopularProd},
     )
 
-def comprar(request,id):
-    idprod = id
+def CompraEnd(request):
     return render(
         request,
-        'comprar.html',{'idprod':idprod,},
+        'CompraEnd.html'
     )
 
 

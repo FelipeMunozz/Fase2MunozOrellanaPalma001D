@@ -41,23 +41,31 @@
     </div>
     <div class="container">
     
-        <button class="tablink" onclick="openPage('DESTACADO', this, 'black')"id="defaultOpen" >DESTACADO</button>
+        <button class="tablink" onclick="openPage('DESTACADO', this, 'black')" id="defaultOpen">DESTACADO</button>
         <button class="tablink" onclick="openPage('OFERTAS', this, 'black')" >OFERTAS</button>
-        <button class="tablink" onclick="openPage('POPULARES', this, 'black')">POPULARES</button>
+        <button class="tablink" onclick="openPage('POPULARES', this, 'black')" >POPULARES</button>
         
         <div id="DESTACADO" class="tabcontent">
             <div class="row">
-                {% for producto in DestacadoProd %}
+                {% for producto in DestacadoProd %}                
                 <div class="col-md">        
-                    <div class="card text-center">
+                    <div class="card text-center border-secondary bg-light">
                         <div class="card-body">
                             <p class="card-title">{{ producto.NombreProd }}</p>
-                            <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto" >
-                            <p class="card-text">${{ producto.PrecioProd }}</p>
-                            <a href="{{ producto.get_absolute_url }}" class="btn btn-primary">VER</a>
+                            <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
+                            <div class="card-footer bg-light">  
+                                <div class="shadow-lg w-10 p-1 bg-light rounded">
+                                    <div class="alert alert-primary">
+                                        ${{ producto.PrecioProd }}
+                                    </div>                                    
+                                    <a href="{{ producto.get_absolute_url }}" class="btn btn-primary" >VER</a>  
+                                </div>                         
+                                
+                            </div> 
                         </div>
                     </div>          
                 </div>{% endfor %}
+                
             </div>
         </div>
 
@@ -65,12 +73,19 @@
             <div  class="row">
                 {% for producto in OfertaProd  %}
                 <div class="col-md">        
-                    <div class="card text-center">
+                    <div class="card text-center border-secondary bg-light">
                         <div class="card-body">
                             <p class="card-title">{{ producto.NombreProd }}</p>
-                            <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto" >
-                            <p class="card-text">${{ producto.PrecioProd }}</p>
-                            <a href="{{ producto.get_absolute_url }}" class="btn btn-primary">VER</a>
+                            <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
+                            <div class="card-footer bg-light">  
+                                <div class="shadow-lg w-10 p-1 bg-light rounded">
+                                    <div class="alert alert-primary">
+                                        ${{ producto.PrecioProd }}
+                                    </div>                                    
+                                    <a href="{{ producto.get_absolute_url }}" class="btn btn-primary" >VER</a>  
+                                </div>                         
+                                
+                            </div> 
                         </div>
                     </div>          
                 </div>{% endfor %}
@@ -80,12 +95,19 @@
             <div class="row">
                 {% for producto in PopularProd   %}
                 <div class="col-md">        
-                    <div class="card text-center">
+                    <div class="card text-center border-secondary bg-light">
                         <div class="card-body">
                             <p class="card-title">{{ producto.NombreProd }}</p>
                             <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
-                            <p class="card-text">${{ producto.PrecioProd }}</p>
-                            <a href="{{ producto.get_absolute_url }}" class="btn btn-primary">VER</a>
+                            <div class="card-footer bg-light">  
+                                <div class="shadow-lg w-10 p-1 bg-light rounded">
+                                    <div class="alert alert-primary">
+                                        ${{ producto.PrecioProd }}
+                                    </div>                                    
+                                    <a href="{{ producto.get_absolute_url }}" class="btn btn-primary" >VER</a>  
+                                </div>                         
+                                
+                            </div> 
                         </div>
                     </div>          
                 </div>

@@ -5,9 +5,8 @@
     font-family: 'Times New Roman', Times, serif;    
 }
 
-
 body{
-    background-image: url(../img/dark-triangles.png);
+    background-image: url(../img/micro_carbon_@2X.png);
 }
 /*Estilos del Header*/
 header
@@ -15,8 +14,9 @@ header
   position: fixed;
   height: 100px;
   width: 100%;
-  background:#3A2C34;
+  background-image: url(../img/banner\ 2.png);
   z-index: 3;
+  border-radius: 10px;
 }
 .menu
 {
@@ -25,7 +25,7 @@ header
 }
 .logo
 {
-    width: 79%;
+    width: 40%;    
 }
 
 .logo img
@@ -33,6 +33,7 @@ header
     display: inline-block;
     width: 100px;
     height: 100px;
+    z-index: 100;
 }
 .secion
 {
@@ -52,7 +53,7 @@ header
 }
 #barra
 {
-   background: #282829;
+   background-image: url(../img/banner\ 2.png);
    width: 150px;
    height: 600px;
    position: relative;
@@ -156,7 +157,7 @@ header
     display: none;
     width:118%;
     height: auto;
-    background: #282829;
+    background-image: url(../img/banner\ 2.png);
     position: relative;
     top:-50px;
     left:-182px;
@@ -248,7 +249,7 @@ footer
 
 .tabcontent 
 {
-  color: white;
+  color: black;
   display: none;
   padding: 50px 20px;
   height: 100%;
@@ -262,7 +263,8 @@ footer
 
 #DESTACADO,#OFERTAS,#POPULARES
 {
-    background-color: rgb(22, 43, 58);;
+    background-color: whitesmoke;
+    border-radius: 15px;
 }
 .col-md
 {
@@ -347,7 +349,7 @@ p.from-control
 
     #barra
     {
-        background:#3A2C34;
+        background-image: url(../img/banner\ 2.png);
         width: 80%;
         height: 110px;
         position: relative;
@@ -384,7 +386,7 @@ p.from-control
     .prod-comp
     {
         width:100px;
-        background:#282829;
+        background-image: url(../img/banner\ 2.png);
         position: absolute;
         top:0;
         left:-200px;
@@ -392,7 +394,7 @@ p.from-control
     }
     .opcion-p li
     {
-        background:#282829;
+        background-image: url(../img/banner\ 2.png);
         width: 200%;
         text-align: center;
     }  
@@ -418,6 +420,7 @@ p.from-control
 }
 
 
+
 /* estilos de productos*/
 .imagen_prod{
     width: 100%;
@@ -439,7 +442,11 @@ p.from-control
     {
         left:-6px;
         width: 110%;
-    }     
+    }   
+    
+    .cards_productos{
+        max-width: 300px;
+    }
 
     
 }
@@ -477,6 +484,21 @@ p.from-control
        top:-91px;
     }
     
+}
+
+
+.fondo_form_compra{
+    background-color: whitesmoke;
+    margin-left: 20%;
+    margin-right: 20%; 
+    border-radius: 10px;
+}
+
+
+
+.cards_productos{
+    background-image: url(../img/triangles.png);
+    border-radius: 20px;
 }
 
 

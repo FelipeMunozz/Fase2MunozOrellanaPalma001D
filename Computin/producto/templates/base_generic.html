@@ -18,9 +18,8 @@
     <header>
         {% block menu %}
         <div class="menu">
-            <div class="logo">
-                {% load static %}
-                <img src="{% static 'img/Logo_ComPutin2.png' %}" alt="Computin">
+            <div class="logo" >
+                <a href="{% url 'index' %}"><img src="{% static 'img/Logo_ComPutin2.png' %}" alt="Computin" href="{% url 'index' %}" ></a>
             </div>
             <div class="secion">
                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#miModal">

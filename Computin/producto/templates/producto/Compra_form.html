@@ -1,0 +1,90 @@
+{%extends "base_generic.html" %}
+
+{% block title%}<title>ComPutin - Comprar</title>{% endblock %}
+
+
+{%block content %}
+
+<!-- FORMULARIO DE COMPRA -->
+<div class="container-fluid" >
+    <div class="row">                       
+        <form class="col-md fondo_form_compra" action="" name="CrearCompra" method="POST">
+            <hr>
+            {%csrf_token%}
+            <div class="alert alert-success " role="alert">
+                <h1>Formulario de compra</h1>
+            </div>                      
+            <div class="row-sm-6"> 
+                <label style="color: black; position: static; text-align: center;">Nombres y apellido</label>                              
+                <div class="form-group row-sm-6">                    
+                    <div>
+                        {{form.nombre}}
+                    </div>
+                    
+                </div>
+
+                <label style="color: black; position: static; text-align: center;">Correo</label>
+                <div class="form-group row-sm-6">                    
+                    <div>
+                        {{form.correo}}
+                    </div>                    
+                </div>
+                <label style="color: black; position: static; text-align: center;">Número de teléfono</label>
+                <div class="form-group row-sm-6">                    
+                    <div>
+                        {{form.numTelefonico}}
+                    </div> 
+                    
+                </div>
+                <label style="color: black; position: static; text-align: center;">Comuna</label>
+                <div class="form-group col-md">                    
+                    <div>
+                        {{form.comuna}}
+                    </div>                    
+                </div>
+                <label style="color: black; position: static; text-align: center;">Dirección</label>
+                <div class="form-group col-md">                    
+                    <div>
+                        {{form.direccion}}
+                    </div> 
+                    
+                </div>
+                <label style="color: black; position: static; text-align: center;">ID Producto</label>
+                <div class="form-group col-md">                    
+                    {% if idprod != 0 %}
+                    <div>
+                        {{form.idProducto}}
+                    </div>                     
+                    {% else %}
+                    <div>
+                        {{form.idProducto}}
+                    </div>
+                    {% endif %}
+                </div>
+                <label style="color: black; position: static; text-align: center;">Comentario</label>
+                <div class="form- col-md">                    
+                    <div>
+                        {{form.comentario}}
+                    </div>                    
+                </div>                        
+                <div class="form-group col-md">
+                    <hr>
+                    <input class="btn btn-primary" type="submit"  value="Enviar">
+                    <hr>
+                </div>
+                <div class="alert alert-info" role="alert">
+                    Para ventas telefónicas o información sobre stock de productos llamar al: +56991349101
+                </div>
+                <hr>
+                <div style="visibility: hidden;">
+                    {{form.idCompra}}
+                </div> 
+            </div>
+            
+        </form>
+        
+    </div>
+    
+</div>
+
+{%endblock%}

@@ -12,10 +12,8 @@
         <div >
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="cuadro_imagen_prod" >
-                            <img class="img imagen_prod" src="{{ producto.imageProd.url}}"  alt="productos" >                    
-                        </div>
+                    <div class="align-self-center col-sm-4">                        
+                        <img class="img imagen_prod " src="{{ producto.imageProd.url}}"  alt="productos" >
                     </div>      
                     <div class="col-sm-8">
                         <div class="jumbotron cuadro_venta " style="float: right;text-align:center;">
@@ -54,24 +52,16 @@
                     </div>                      
                 </div>
                 <div class="row">                                       
-                    <div style="text-align: justify;">        
+                    <div style="text-align: justify; margin-bottom: 5%; margin-top: 3%; ">        
                         {{ producto.DescripciónProd }}
-                    </div>                    
-            
-                    <div class="row">
-                        {% for producto in DestacadoProd %}
-                        <div class="col-md">        
-                            <div class="card text-center">
-                                <div class="card-body">
-                                    <p class="card-title">{{ producto.NombreProd }}</p>
-                                    <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto" >
-                                    <p class="card-text">${{ producto.PrecioProd }}</p>
-                                    <a href="{% url 'producto-detail' producto.pk %}" class="btn btn-primary">VER</a>
-                                </div>
-                            </div>          
-                        </div>{% endfor %}
-                    </div>  
+                    </div>
                 </div>
+                <hr>
+                <div class="col-sm-9" style="margin-left: 10%;">
+                    {% load static %}
+                    <img class="border-secundary w-100" src="{% static 'img/banner-envios.jpg' %}">
+                </div>
+                <hr>
             </div>   
         </div>         
     </div>

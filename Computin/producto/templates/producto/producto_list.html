@@ -3,32 +3,41 @@
 {% block title%}<title>ComPutin - Productos</title>{% endblock %}
 
 {% block content %}
-    <h1 style="background-color: aquamarine;">LISTADO DE PRODUCTOS</h1>
+    <div class="alert alert-primary" >
+      <strong><h1>Listado de productos</h1></strong>
+    </div> 
 
     {% if producto_list %}
   
 
       
       <div class="conteiner">
-        <div class="row">
+        <div class="row cards_productos" style="margin-left: 6%;margin-right: 6%;">          
           {% for producto in producto_list %}
-          <div class="col-md">        
-            <div class="card text-center">
+          <div class="col-md tamañoCartas" style="max-width: 234px;">
+            <div class="card text-center border-secondary bg-light" >
               <div class="card-body">
-                <p class="card-title">{{ producto.NombreProd }}</p>
-                <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
-                <p class="card-text">${{ producto.PrecioProd }}</p>
-                <a href="{{ producto.get_absolute_url }}" class="btn btn-primary">VER</a>
+                  <p class="card-title">{{ producto.NombreProd }}</p>
+                  <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
+                  <div class="card-footer bg-light">  
+                      <div class="shadow-lg w-10 p-1 bg-light rounded">
+                          <div class="alert alert-primary">
+                              ${{ producto.PrecioProd }}
+                          </div>                                    
+                          <a href="{{ producto.get_absolute_url }}" class="btn btn-primary" >VER</a>  
+                      </div>                         
+                      
+                  </div> 
               </div>
-            </div>          
-          </div>{% endfor %}
+          </div>     
+          </div> 
+          {% endfor %}    
         </div> 
       </div>
      
 
    
 
-    {% else %}
-      <p>There are no books in the library.</p>
+
     {% endif %}       
 {% endblock %}

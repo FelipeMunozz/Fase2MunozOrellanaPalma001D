@@ -34,4 +34,4 @@ class Compra(models.Model):
 		return self.nombre
 	
 	def get_absolute_url(self):
-		return reverse('producto-detail', args=[int(self.idProducto)])
+		return reverse('CompraEnd')

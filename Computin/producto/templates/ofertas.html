@@ -10,55 +10,80 @@
 {%block content %}
     <!--Carrusel-->
     <div class="container">
-        <div class="Titulofertas">
-            <h1>DESTACADOS</h1>
-        </div>
+        <br>
+        <div class="alert alert-primary" >
+            <strong><h1>DESTACADOS</h1></strong>
+          </div>
         <div class="row">
             {% for producto in DestacadoProd %}
-                <div class="col-md">        
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <p class="card-title">{{ producto.NombreProd }}</p>
-                            <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto" >
-                            <p class="card-text">${{ producto.PrecioProd }}</p>
-                            <a href="{{ producto.get_absolute_url }}" class="btn btn-primary">VER</a>
-                        </div>
-                    </div>          
-                </div>
+            <div class="col-md">        
+                <div class="card text-center border-secondary bg-light">
+                    <div class="card-body">
+                        <p class="card-title">{{ producto.NombreProd }}</p>
+                        <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
+                        <div class="card-footer bg-light">  
+                            <div class="shadow-lg w-10 p-1 bg-light rounded">
+                                <div class="alert alert-primary">
+                                    ${{ producto.PrecioProd }}
+                                </div>                                    
+                                <a href="{{ producto.get_absolute_url }}" class="btn btn-primary" >VER</a>  
+                            </div>                         
+                            
+                        </div> 
+                    </div>
+                </div>          
+            </div>
             {% endfor %}
         </div>
-        <div class="Titulofertas">
-            <h1>OFERTAS</h1>
-        </div>
+        <br>
+        <div class="alert alert-primary" >            
+            <strong><h1>OFERTAS</h1></strong>
+          </div>
         <div class="row">
             {% for producto in OfertaProd  %}
-                <div class="col-md">        
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <p class="card-title">{{ producto.NombreProd }}</p>
-                            <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto" >
-                            <p class="card-text">${{ producto.PrecioProd }}</p>
-                            <a href="{{ producto.get_absolute_url }}" class="btn btn-primary">VER</a>
-                        </div>
-                    </div>          
-                </div>{% endfor %}
+            <div class="col-md">        
+                <div class="card text-center border-secondary bg-light">
+                    <div class="card-body">
+                        <p class="card-title">{{ producto.NombreProd }}</p>
+                        <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
+                        <div class="card-footer bg-light">  
+                            <div class="shadow-lg w-10 p-1 bg-light rounded">
+                                <div class="alert alert-primary">
+                                    ${{ producto.PrecioProd }}
+                                </div>                                    
+                                <a href="{{ producto.get_absolute_url }}" class="btn btn-primary" >VER</a>  
+                            </div>                         
+                            
+                        </div> 
+                    </div>
+                </div>          
+            </div>
+            {% endfor %}
         </div>
-        <div class="Titulofertas">
-            <h1>POPULARES</h1>
-        </div>
+        <br>
+        <div class="alert alert-primary" >
+            <strong><h1>POPULARES</h1></strong>
+          </div>
         <div class="row">
             {% for producto in PopularProd   %}
-                <div class="col-md">        
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <p class="card-title">{{ producto.NombreProd }}</p>
-                            <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
-                            <p class="card-text">${{ producto.PrecioProd }}</p>
-                            <a href="{{ producto.get_absolute_url }}" class="btn btn-primary">VER</a>
-                        </div>
-                    </div>          
-                </div>
-                {% endfor %}
+            <div class="col-md">        
+                <div class="card text-center border-secondary bg-light">
+                    <div class="card-body">
+                        <p class="card-title">{{ producto.NombreProd }}</p>
+                        <img class="imagendecard" src="{{ producto.imageProd.url}}" alt="producto">
+                        <div class="card-footer bg-light">  
+                            <div class="shadow-lg w-10 p-1 bg-light rounded">
+                                <div class="alert alert-primary">
+                                    ${{ producto.PrecioProd }}
+                                </div>                                    
+                                <a href="{{ producto.get_absolute_url }}" class="btn btn-primary" >VER</a>  
+                            </div>                         
+                            
+                        </div> 
+                    </div>
+                </div>          
+            </div>
+            {% endfor %}
         </div>
     </div>  
   
