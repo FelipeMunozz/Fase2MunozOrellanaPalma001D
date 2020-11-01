@@ -3,7 +3,7 @@
 {% block title%}<title>ComPutin - Gracias Por comprar</title>{% endblock %}
 
 {% block content %}
-<div class="row producto" style="width: 80%;">
+<div class="row producto" style="width: 90%;">
     <div class="col-sm" style="background-color: ghostwhite; margin-left: 2%; margin-right: 2%; border-radius: 40px;">
         <class class="container-fluid p-1 my-1 text-black" style="background-color: transparent; border-radius: 20px; text-align:left;">
             <hr>
@@ -14,14 +14,16 @@
             {% load static %}
             <img src="{% static 'img/Check.png' %}" height="150" width="150" alt="">
             <hr>
-            <div class="alert alert-secondary " style="text-align: center;">
-                <p>¡La boleta electrónica ha sido enviada a su dirección de correo!</p>
+            <div class="alert alert-secondary">
+                <p>Toda la informacion fue enviada a su correo.</p>
                 <br><p>Toda consulta o reclamo puede ponerse en contacto con el siguiente numero telefonico: +56991349101</p>
             </div>
             <a  href="{% url 'index' %}" class="btn btn-success btn-lg btn-block" >Presione aqui para Continuar</a>
             <hr>
-            <img class="border-secundary " height="100%" width="80%" src="{% static 'img/banner-envios.jpg' %}" style="border-radius: 10px;">    
-            <hr>        
+            <div class="col-sm-9" style="margin-left: 10%;">
+                {% load static %}
+                <img class="border-secundary w-100" src="{% static 'img/banner-envios.jpg' %}">
+            </div>
         </class>
         </div>         
     </div>
